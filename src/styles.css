@@ -103,6 +103,14 @@ a,
   margin: 5px;
 }
 
+.author {
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px;
+}
+
 .highestTemp,
 .lowestTemp,
 .weatherDescription {
