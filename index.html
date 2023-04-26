@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="containerOne">
+      <div class="weatherAppBorder">
+        <form id="search-form">
+          <input
+            class="searchBar"
+            id="search-for-city"
+            type="text"
+            placeholder="Search for a city"
+          />
+          <input class="searchButton" type="submit" value="Search" />
+        </form>
+        <button id="current-location-button">Current Location</button>
+
+        <h1 class="cityName" id="city-name">Paris</h1>
+        <h6 class="currentDateAndTime">Friday, 09:33</h6>
+        <h3 class="currentTemp" id="currently-temp">CURRENTLY</h3>
+        <h3 class="exactTemp">24<sup id="celsiusSymbol">°C</sup></h3>
+
+        <div class="centeringHighLow">
+          <span class="highestTemp"> 27°C </span>
+          <span class="lowestTemp"> 12°C</span>
+        </div>
+
+        <div class="weatherDescription">Cloudy</div>
+      </div>
+    </div>
+  </body>
+  <script src="src/index.js"></script>
+</html>
