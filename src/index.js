@@ -33,8 +33,7 @@ function updatedCity(event) {
   usersCity.innerHTML = `${inputCityJs.value}`;
   let apiKey = `a95c2c6739994ba4903e007ee817e7d1`;
   let unit = `metric`;
-  let iconcode = ``;
-  let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputCityJs.value}&units=${unit}&${iconcode}@2x.png&appid=${apiKey}`;
+  let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputCityJs.value}&units=${unit}&appid=${apiKey}`;
   axios.get(`${weatherApi}`).then(updateWeather);
 }
 
@@ -47,11 +46,16 @@ function updateWeather(response) {
   temp.innerHTML = `${Math.round(response.data.main.temp)}`;
   // retreiving api city name
   document.querySelector(".cityPlaceholder").innerHTML = response.data.name;
+
+  document.querySelector(
+    `.humidityAttribute`
+  ).innerHTML = `Humidity: ${Math.round(response.data.main.humidity)}%`;
+  document.querySelector(`.windAttribute`).innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed
+  )} km/h`;
+
+  console.log(response.data.wind.speed);
   // retreiving api city temp description
-  let weatherDescription = document.querySelector(".emojiSymbol");
-  weatherDescription.innerHTML = response.data.weather[0].description;
-  if (weatherDescription.innerHTML === `light rain`) {
-    weatherDescription.innerHTML = `🌧️`;
-  }
-  console.log(response);
+  /* let weatherDescription = document.querySelector(".emojiSymbol");
+  weatherDescription.innerHTML = response.data.weather[0].description;*/
 }
