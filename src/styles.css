@@ -1,6 +1,6 @@
 .boarderDiv {
   border: 1px solid #dddddd;
-  max-width: 400px;
+  max-width: 90%;
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
@@ -127,6 +127,32 @@ ul {
   font-family: "Manrope", sans-serif;
   margin-left: 0px;
   padding-left: 0px;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 0;
+  padding: 0px;
+}
+
+.EmojiSymbolZero,
+.EmojiSymbolOne,
+.EmojiSymbolTwo,
+.EmojiSymbolThree,
+.EmojiSymbolFour {
+  font-family: "Manrope", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 0;
+  padding: 0px;
 }
 
 .author {
