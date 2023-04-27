@@ -200,7 +200,9 @@ ul {
 .firstPortion,
 .secondPortion,
 .thirdPortion {
-  margin-top: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
   margin-left: 20px;
 }
 
@@ -259,7 +261,13 @@ ul {
 .emojiSymbol {
   font-size: 50px;
 }
-.col-2 {
+.emojiSymbol {
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.exactTemp,
+.degreesUnits {
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 5px;
@@ -269,7 +277,9 @@ ul {
 .degreesUnits {
   padding-top: 10px;
   padding-left: 0;
-  margin-left: 0;
+  padding-right: 0px;
+  margin-left: 5px;
+  margin-right: 0px;
   font-size: 15px;
 }
 
@@ -292,4 +302,6 @@ ul {
 .humidityAttribute,
 .windAttribute {
   font-family: "Manrope", sans-serif;
+  margin-left: 0px;
+  padding-left: 0px;
 }
