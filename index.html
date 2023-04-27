@@ -58,34 +58,46 @@
       by Judith Ikeh
     </p> -->
   </body>
-  <div class="boarderDiv">
-    <div class="firstPortion">
-      <form id="search-form">
-        <input
-          class="cityInputBar"
-          id="input-city"
-          type="text"
-          placeholder="Type a city. . . "
-        />
-        <input class="searchButton" type="submit" value="Search" />
-      </form>
+  <div class="boarderDiv container">
+    <div class="firstPortion row">
+      <div class="col">
+        <form id="search-form">
+          <input
+            class="cityInputBar"
+            id="input-city"
+            type="text"
+            placeholder="Type a city. . . "
+          />
+          <input class="searchButton" type="submit" value="Search" />
+        </form>
+      </div>
     </div>
 
-    <div class="secondPortion">
-      <h1 class="cityPlaceholder">New York</h1>
-      <h3 class="currentDayAndTime">Wednesday, 09:33</h3>
+    <div class="secondPortion row">
+      <div class="col">
+        <h1 class="cityPlaceholder">New York</h1>
+        <h3 class="currentDayAndTime">Wednesday, 09:33</h3>
+      </div>
     </div>
 
-    <div class="thirdPortion">
-      <p class="theWeatherData">
-        <span class="emojiSymbol">❄️</span> <span class="exactTemp"> 24</span
-        ><span> °C | °F</span>
-      </p>
-      <ul class="weatherAttributes">
-        <li class="humidityAttribute">Humidity</li>
-        <li class="windAttribute">Wind</li>
-      </ul>
+    <div class="thirdPortion row">
+      <div class="col-1">
+        <p class="emojiSymbol">❄️</p>
+      </div>
+      <div class="col-2">
+        <p class="exactTemp">24</p>
+      </div>
+      <div class="col-2">
+        <a href="#" class="degreesUnits">°C | °F</a>
+      </div>
+      <div class="col-2">
+        <ul class="weatherAttributes">
+          <li class="humidityAttribute">Humidity</li>
+          <li class="windAttribute">Wind</li>
+        </ul>
+      </div>
     </div>
   </div>
+
   <script src="src/index.js"></script>
 </html>
