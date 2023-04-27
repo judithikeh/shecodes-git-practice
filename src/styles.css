@@ -254,6 +254,42 @@ ul {
   font-size: 20px;
   margin-top: 0;
 }
-.exactTemp {
+
+.exactTemp,
+.emojiSymbol {
   font-size: 50px;
+}
+.col-2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.degreesUnits {
+  padding-top: 10px;
+  padding-left: 0;
+  margin-left: 0;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+}
+
+.unitsDivider {
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  padding-top: 10px;
+}
+
+.humidityAttribute,
+.windAttribute {
+  font-family: "Manrope", sans-serif;
 }
