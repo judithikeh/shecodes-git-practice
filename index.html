@@ -23,7 +23,7 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="containerOne">
+    <!--  <div class="containerOne">
       <div class="weatherAppBorder">
         <form id="search-form">
           <input
@@ -56,7 +56,36 @@
         >Open source-coded</a
       >
       by Judith Ikeh
-    </p>
+    </p> -->
   </body>
+  <div class="boarderDiv">
+    <div class="firstPortion">
+      <form id="search-form">
+        <input
+          class="cityInputBar"
+          id="input-city"
+          type="text"
+          placeholder="Type a city. . . "
+        />
+        <input class="searchButton" type="submit" value="Search" />
+      </form>
+    </div>
+
+    <div class="secondPortion">
+      <h1 class="cityPlaceholder">New York</h1>
+      <h3 class="currentDayAndTime">Wednesday, 09:33</h3>
+    </div>
+
+    <div class="thirdPortion">
+      <p class="theWeatherData">
+        <span class="emojiSymbol">❄️</span> <span class="exactTemp"> 24</span
+        ><span> °C | °F</span>
+      </p>
+      <ul class="weatherAttributes">
+        <li class="humidityAttribute">Humidity</li>
+        <li class="windAttribute">Wind</li>
+      </ul>
+    </div>
+  </div>
   <script src="src/index.js"></script>
 </html>
