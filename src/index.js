@@ -56,6 +56,8 @@ function updateWeather(response) {
 
   console.log(response.data.wind.speed);
   // retreiving api city temp description
-  /* let weatherDescription = document.querySelector(".emojiSymbol");
-  weatherDescription.innerHTML = response.data.weather[0].description;*/
+  let weatherDescription = document.querySelector(
+    ".weatherConditionDescription"
+  );
+  weatherDescription.innerHTML = response.data.weather[0].description;
 }

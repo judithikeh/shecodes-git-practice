@@ -54,7 +54,8 @@ ul {
 
 .cityPlaceholder,
 .currentDayAndTime,
-.exactTemp {
+.exactTemp,
+.weatherConditionDescription {
   text-align: left;
   margin-bottom: 20px;
   font-family: "Gloock", serif;
@@ -63,14 +64,22 @@ ul {
 .cityPlaceholder {
   font-size: 30px;
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .currentDayAndTime {
   font-size: 20px;
   margin-top: 0;
+  margin-bottom: 10px;
+  padding-bottom: 0;
 }
 
+.weatherConditionDescription {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+}
 .exactTemp,
 .emojiSymbol {
   font-size: 50px;
