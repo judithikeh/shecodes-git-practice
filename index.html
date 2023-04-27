@@ -22,40 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
-  <!--  <div class="containerOne">
-      <div class="weatherAppBorder">
-        <form id="search-form">
-          <input
-            class="searchBar"
-            id="search-for-city"
-            type="text"
-            placeholder="Search for a city"
-          />
-          <input class="searchButton" type="submit" value="Search" />
-        </form>
-        <button id="current-location-button">Current Location</button>
 
-        <h1 class="cityName" id="city-name">Paris</h1>
-        <h6 class="currentDateAndTime">Friday, 09:33</h6>
-        <h3 class="currentTemp" id="currently-temp">CURRENTLY</h3>
-        <h3 class="exactTemp">24<sup id="celsiusSymbol">°C</sup></h3>
-
-        <div class="centeringHighLow">
-          <span class="highestTemp"> 27°C </span>
-          <span class="lowestTemp"> 12°C</span>
-        </div>
-
-        <div class="weatherDescription">Cloudy</div>
-      </div>
-    </div>
-    <p class="author">
-      <a
-        href="https://github.com/judithikeh/shecodes-git-practice"
-        target="_blank"
-        >Open source-coded</a
-      >
-      by Judith Ikeh
-    </p> -->
   <body>
     <div class="boarderDiv container">
       <div class="firstPortion row">
@@ -67,14 +34,19 @@
               type="text"
               placeholder="Type a city. . . "
             />
-            <input class="searchButton" type="submit" value="Search" />
+            <input
+              class="searchButton"
+              id="search-button-html"
+              type="submit"
+              value="Search"
+            />
           </form>
         </div>
       </div>
 
       <div class="secondPortion row">
         <div class="col">
-          <h1 class="cityPlaceholder">New York</h1>
+          <h1 class="cityPlaceholder" id="users-city-name-html">New York</h1>
           <h3 class="currentDayAndTime">Wednesday, 09:33</h3>
         </div>
       </div>
