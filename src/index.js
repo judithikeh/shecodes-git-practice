@@ -60,4 +60,9 @@ function updateWeather(response) {
     ".weatherConditionDescription"
   );
   weatherDescription.innerHTML = response.data.weather[0].description;
+  // change icon
+  let weatherIconCode = response.data.weather[0].icon;
+  let weatherEmojiUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
+  let jsEmohiPlaceholder = document.querySelector(".weatherIconCodeHtml");
+  jsEmohiPlaceholder.innerHTML = `${response.weatherEmojiUrl}`;
 }

@@ -1,6 +1,6 @@
 .boarderDiv {
   border: 1px solid #dddddd;
-  max-width: 90%;
+  max-width: 600px;
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
@@ -80,32 +80,48 @@ ul {
   margin-bottom: 0px;
   padding-bottom: 0;
 }
-.exactTemp,
-.emojiSymbol {
+p.exactTemp {
   font-size: 50px;
+  padding: 0;
+  margin: 0;
 }
 .emojiSymbol {
   padding-left: 0px;
   margin-left: 0px;
   margin-right: 10px;
 }
-.exactTemp,
-.degreesUnits {
+
+div.col-2 {
+  padding: 0px;
+}
+.exactTemp {
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 5px;
   margin-right: 5px;
+  display: inline;
 }
 
-.degreesUnits {
-  padding-top: 10px;
+img {
+  padding-bottom: 30px;
+}
+
+span.degreesUnits {
+  padding-bottom: 0px;
   padding-left: 0;
   padding-right: 0px;
   margin-left: 5px;
   margin-right: 0px;
-  font-size: 15px;
+  font-size: 18px;
 }
 
+sup {
+  position: 10px;
+}
+
+.tempAndDegreeDiv {
+  display: inline;
+}
 a {
   text-decoration: none;
   font-family: "Manrope", sans-serif;
