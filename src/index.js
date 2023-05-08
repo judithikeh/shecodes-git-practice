@@ -1,4 +1,4 @@
-// current date and time
+/* current date and time
 let newDateAndTime = new Date();
 let jsCurrentDateAndTime = document.querySelector(".currentDayAndTime");
 let hour = newDateAndTime.getHours();
@@ -21,8 +21,30 @@ let weekDays = [
 ];
 let dayOfWeek = weekDays[newDateAndTime.getDay()];
 
-jsCurrentDateAndTime.innerHTML = `${dayOfWeek}, ${hour}:${minutes}`;
+jsCurrentDateAndTime.innerHTML = `${dayOfWeek}, ${hour}:${minutes}`; */
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minute = date.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let dayOfWeek = weekDays[date.getDay()];
 
+  return `${dayOfWeek}, ${hour}:${minute}`;
+}
 // search engine function & api function
 let form = document.querySelector("#search-form");
 
@@ -43,7 +65,16 @@ form.addEventListener("submit", updatedCity);
 function updateWeather(response) {
   // retreiving api city temp
   let temp = document.querySelector(".exactTemp");
-  temp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  temp.innerHTML = `${Math.round(
+    response.data.main.temp
+  )} <span class="col-2 degreesUnits">
+              <sup>
+                <a href="#" class="degreesCelsius"
+                  >°C <span class="unitsDivider">|</span></a
+                >
+                <a href="#" class="degreesFahrenheit">°F</a></sup
+              >
+            </span>`;
   // retreiving api city name
   document.querySelector(".cityPlaceholder").innerHTML = response.data.name;
 
@@ -54,15 +85,18 @@ function updateWeather(response) {
     response.data.wind.speed
   )} km/h`;
 
-  console.log(response.data.wind.speed);
   // retreiving api city temp description
   let weatherDescription = document.querySelector(
     ".weatherConditionDescription"
   );
   weatherDescription.innerHTML = response.data.weather[0].description;
-  // change icon
+  // getting users city accurate time and day
+  let currentDayAndTimeElement = document.querySelector(`.currentDayAndTime`);
+  currentDayAndTimeElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  /* change icon
   let weatherIconCode = response.data.weather[0].icon;
   let weatherEmojiUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
   let jsEmohiPlaceholder = document.querySelector(".weatherIconCodeHtml");
-  jsEmohiPlaceholder.innerHTML = `${response.weatherEmojiUrl}`;
+  jsEmojiPlaceholder.innerHTML = `${response.weatherEmojiUrl}`; */
 }
