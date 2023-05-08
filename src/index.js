@@ -1,27 +1,3 @@
-/* current date and time
-let newDateAndTime = new Date();
-let jsCurrentDateAndTime = document.querySelector(".currentDayAndTime");
-let hour = newDateAndTime.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = newDateAndTime.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-let weekDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let dayOfWeek = weekDays[newDateAndTime.getDay()];
-
-jsCurrentDateAndTime.innerHTML = `${dayOfWeek}, ${hour}:${minutes}`; */
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
@@ -94,9 +70,13 @@ function updateWeather(response) {
   let currentDayAndTimeElement = document.querySelector(`.currentDayAndTime`);
   currentDayAndTimeElement.innerHTML = formatDate(response.data.dt * 1000);
 
-  /* change icon
-  let weatherIconCode = response.data.weather[0].icon;
-  let weatherEmojiUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
-  let jsEmohiPlaceholder = document.querySelector(".weatherIconCodeHtml");
-  jsEmojiPlaceholder.innerHTML = `${response.weatherEmojiUrl}`; */
+  // change icon aaccording to country
+  let iconApi = response.data.weather[0].icon;
+  let emojiElement = document.querySelector(`#emoji-symbol`);
+  emojiElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconApi}@2x.png`
+  );
+
+  console.log(iconApi);
 }
