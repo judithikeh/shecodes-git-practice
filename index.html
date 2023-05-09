@@ -31,8 +31,9 @@
             <input
               class="cityInputBar"
               id="input-city"
-              type="text"
+              type="search"
               placeholder="Type a city. . . "
+              autocomplete="off"
             />
             <input
               class="searchButton"
@@ -54,16 +55,13 @@
       </div>
 
       <div class="thirdPortion row">
-        <div class="col-2">
+        <div class="col-6">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="Partly cloudy icons"
             class="emojiSymbol"
             id="emoji-symbol"
           />
-        </div>
-
-        <div class="col-4 tempAndDegreeDiv">
           <p class="exactTemp">
             24<span class="col-2 degreesUnits">
               <sup>
@@ -99,12 +97,13 @@
           <div class="col-2 EmojiSymbolThree">⛈️</div>
           <div class="col-2 EmojiSymbolFour">☁️</div>
         </div>
-        <div class="row" id="high-and-low-temp"></div>
-        <div class="col-2 monHighLow"><b>1° </b><span>|</span> 10°</div>
-        <div class="col-2 tuesHighLow"><b>2°</b> <span>|</span> 20°</div>
-        <div class="col-2 wedHighLow"><b>3° </b><span>|</span> 30°</div>
-        <div class="col-2 thursHighLow"><b>4°</b> <span>|</span> 40°</div>
-        <div class="col-2 friHighLow"><b>5°</b> <span>|</span> 50°</div>
+        <div class="row" id="high-and-low-temp">
+          <div class="col-2 monHighLow"><b>1° </b><span>|</span> 10°</div>
+          <div class="col-2 tuesHighLow"><b>2°</b> <span>|</span> 20°</div>
+          <div class="col-2 wedHighLow"><b>3° </b><span>|</span> 30°</div>
+          <div class="col-2 thursHighLow"><b>4°</b> <span>|</span> 40°</div>
+          <div class="col-2 friHighLow"><b>5°</b> <span>|</span> 50°</div>
+        </div>
       </div>
     </div>
     <p class="author">

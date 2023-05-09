@@ -1,6 +1,6 @@
 .boarderDiv {
   border: 1px solid #dddddd;
-  max-width: 600px;
+  max-width: 500px;
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
@@ -13,11 +13,13 @@ ul {
 
 .firstPortion,
 .secondPortion,
-.thirdPortion {
+.thirdPortion,
+.fourthPortion {
   padding-top: 0px;
   padding-bottom: 0px;
-  margin-top: 0px;
-  margin-left: 20px;
+  max-width: 100%;
+  width: 600px;
+  margin-left: 35px;
 }
 
 .cityInputBar {
@@ -85,25 +87,16 @@ p.exactTemp {
   font-size: 50px;
   padding: 0;
   margin: 0;
+  display: inline;
 }
 .emojiSymbol {
   padding: 0;
   margin: 0;
 }
 
-div.col-2 {
-  padding: 0px;
-}
-.exactTemp {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  display: inline;
-}
-
 img {
-  padding-bottom: 30px;
+  position: relative;
+  bottom: 14px;
 }
 
 span.degreesUnits {
@@ -117,13 +110,6 @@ span.degreesUnits {
   position: absolute;
 }
 
-sup {
-  position: 10px;
-}
-
-.tempAndDegreeDiv {
-  display: inline;
-}
 a {
   text-decoration: none;
   font-family: "Manrope", sans-serif;
@@ -155,7 +141,7 @@ ul {
   font-family: "Manrope", sans-serif;
   font-size: 18px;
   text-align: center;
-  margin-left: 10px;
+
   margin-right: 0;
   padding: 0px;
 }
@@ -168,7 +154,7 @@ ul {
   font-family: "Manrope", sans-serif;
   font-size: 30px;
   text-align: center;
-  margin-left: 10px;
+
   margin-right: 0;
   padding: 0px;
 }
@@ -181,7 +167,7 @@ ul {
   font-family: "Manrope", sans-serif;
   font-size: 14px;
   text-align: center;
-  margin-left: 7px;
+
   margin-right: 0px;
   margin-bottom: 20px;
   padding: 0px;
