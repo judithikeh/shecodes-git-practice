@@ -35,22 +35,11 @@ function updatedCity(event) {
   axios.get(`${weatherApi}`).then(updateWeather);
 }
 
-form.addEventListener("submit", updatedCity);
-
 // api response for temp and city
 function updateWeather(response) {
   // retreiving api city temp
   let temp = document.querySelector(".exactTemp");
-  temp.innerHTML = `${Math.round(
-    response.data.main.temp
-  )} <span class="col-2 degreesUnits">
-              <sup>
-                <a href="#" class="degreesCelsius"
-                  >°C <span class="unitsDivider">|</span></a
-                >
-                <a href="#" class="degreesFahrenheit">°F</a></sup
-              >
-            </span>`;
+  temp.innerHTML = `${Math.round(response.data.main.temp)}`;
   // retreiving api city name
   document.querySelector(".cityPlaceholder").innerHTML = response.data.name;
 
@@ -80,3 +69,16 @@ function updateWeather(response) {
 
   console.log(iconApi);
 }
+
+function displayFahrenheitTemp(event) {
+  let exactTempElement = document.querySelector(".exactTemp");
+  let fahrenheitTemperature = Math.round(
+    (exactTempElement.innerHTML * 9) / 5 + 32
+  );
+  exactTempElement.innerHTML = fahrenheitTemperature;
+}
+
+form.addEventListener("submit", updatedCity);
+
+let degreesFahrenheitElement = document.querySelector(".degreesFahrenheit");
+degreesFahrenheitElement.addEventListener("click", displayFahrenheitTemp);
