@@ -115,6 +115,14 @@ a {
   font-family: "Manrope", sans-serif;
 }
 
+.active {
+  color: black;
+}
+
+.active:hover {
+  cursor: default;
+}
+
 .unitsDivider {
   color: black;
 }

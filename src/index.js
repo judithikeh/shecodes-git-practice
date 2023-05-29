@@ -38,8 +38,9 @@ function updatedCity(event) {
 // api response for temp and city
 function updateWeather(response) {
   // retreiving api city temp
+  celsiusTemperature = response.data.main.temp;
   let temp = document.querySelector(".exactTemp");
-  temp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  temp.innerHTML = `${Math.round(celsiusTemperature)}`;
   // retreiving api city name
   document.querySelector(".cityPlaceholder").innerHTML = response.data.name;
 
@@ -71,14 +72,26 @@ function updateWeather(response) {
 }
 
 function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  degreesCelsiusElement.classList.add("active");
+  degreesFahrenheitElement.classList.remove("active");
   let exactTempElement = document.querySelector(".exactTemp");
-  let fahrenheitTemperature = Math.round(
-    (exactTempElement.innerHTML * 9) / 5 + 32
-  );
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
   exactTempElement.innerHTML = fahrenheitTemperature;
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  degreesCelsiusElement.classList.remove("active");
+  degreesFahrenheitElement.classList.add("active");
+  let exactTempElement = document.querySelector(".exactTemp");
+  exactTempElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
 form.addEventListener("submit", updatedCity);
+
+let degreesCelsiusElement = document.querySelector(".degreesCelsius");
+degreesCelsiusElement.addEventListener("click", displayCelsiusTemp);
 
 let degreesFahrenheitElement = document.querySelector(".degreesFahrenheit");
 degreesFahrenheitElement.addEventListener("click", displayFahrenheitTemp);
