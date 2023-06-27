@@ -120,8 +120,6 @@ function search(city) {
 }
 let form = document.querySelector("#search-form");
 
-
-
 function updatedCity(event) {
   event.preventDefault();
   let inputCityJs = document.querySelector("#input-city");
@@ -134,33 +132,6 @@ function updatedCity(event) {
   axios.get(`${weatherApi}`).then(updateWeather);
 }
 
-
-// degrees update
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  degreesCelsiusElement.classList.add("active");
-  degreesFahrenheitElement.classList.remove("active");
-  let exactTempElement = document.querySelector(".exactTemp");
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  exactTempElement.innerHTML = fahrenheitTemperature;
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  degreesCelsiusElement.classList.remove("active");
-  degreesFahrenheitElement.classList.add("active");
-  let exactTempElement = document.querySelector(".exactTemp");
-  exactTempElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-
 let celsiusTemperature = null;
 form.addEventListener("submit", updatedCity);
-
-let degreesCelsiusElement = document.querySelector(".degreesCelsius");
-degreesCelsiusElement.addEventListener("click", displayCelsiusTemp);
-
-let degreesFahrenheitElement = document.querySelector(".degreesFahrenheit");
-degreesFahrenheitElement.addEventListener("click", displayFahrenheitTemp);
-
 search (`London`);
