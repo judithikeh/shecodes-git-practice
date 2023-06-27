@@ -164,6 +164,8 @@ div#forecast.col-2 {
 }
 .forecastAlign {
 text-align: center;
+margin: 2px;
+padding-bottom: 20px;
 }
 .minTemp,
 .maxTemp {
