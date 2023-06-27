@@ -22,20 +22,52 @@ function formatDate(timestamp) {
   return `${dayOfWeek}, ${hour}:${minute}`;
 }
 
-let form = document.querySelector("#search-form");
+// weekly forecast date format 
 
-function updatedCity(event) {
-  event.preventDefault();
-  let inputCityJs = document.querySelector("#input-city");
-  let usersCity = document.querySelector("#users-city-name-html");
-  usersCity.innerHTML = `${inputCityJs.value}`;
-  let apiKey = `e9b13b0d14e3512d9oa0t7fdc2ebf750`;
-  let unit = `metric`;
-  let weatherApi = `https://api.shecodes.io/weather/v1/current?query=${inputCityJs.value}&units=${unit}&key=${apiKey}`;
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  
+  return days[day];
+} 
+
+// weekly forecast 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  
+
+forecast.forEach(function (forecastDays, index) {
+  if ( index < 5 ){ 
+  let maxTemperature = (Math.round(forecastDays.temperature.maximum));
+  let minTemperature = (Math.round(forecastDays.temperature.minimum));
+  let iconImage = (forecastDays.condition.icon); 
+  console.log(index);
+  forecastHTML = forecastHTML +
+  `<div class="col-2 forecastAlign" >
+            <div class="weeklyForecast">${formatDay(forecastDays.time)}</div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconImage}.png"
+              alt=""
+              class="temperatureImageSymbol"
+            />
+            <div class="highAndLow">
+              <span class="maxTemp"><b>
+              ${maxTemperature}°
+              </b> </span
+              ><span class="minTemp">
+             ${minTemperature}°
+              </span>
+              </div>
+          </div>`; }
+});
+  forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML; 
+ };
+
  
-  axios.get(`${weatherApi}`).then(updateWeather);
-}
-
 // coordinates for forecast
 function getCoordinates(coordinates){
   let apiKey = `e9b13b0d14e3512d9oa0t7fdc2ebf750`;
@@ -81,6 +113,26 @@ function updateWeather(response) {
   getCoordinates(response.data.coordinates);
 } 
 
+function search(city) {
+  let apiKey = `e9b13b0d14e3512d9oa0t7fdc2ebf750`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(updateWeather);
+}
+let form = document.querySelector("#search-form");
+
+
+
+function updatedCity(event) {
+  event.preventDefault();
+  let inputCityJs = document.querySelector("#input-city");
+  let usersCity = document.querySelector("#users-city-name-html");
+  usersCity.innerHTML = `${inputCityJs.value}`;
+  let apiKey = `e9b13b0d14e3512d9oa0t7fdc2ebf750`;
+  let unit = `metric`;
+  let weatherApi = `https://api.shecodes.io/weather/v1/current?query=${inputCityJs.value}&units=${unit}&key=${apiKey}`;
+ 
+  axios.get(`${weatherApi}`).then(updateWeather);
+}
 
 
 // degrees update
@@ -100,50 +152,6 @@ function displayCelsiusTemp(event) {
   let exactTempElement = document.querySelector(".exactTemp");
   exactTempElement.innerHTML = Math.round(celsiusTemperature);
 }
-// weekly forecast date format 
-
-function formatDay(timestamp){
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-  
-  return days[day];
-}
-
-// weekly forecast 
-function displayForecast(response) {
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
-  
-
-forecast.forEach(function (forecastDays, index) {
-  if ( index < 5 ){ 
-  let maxTemperature = (Math.round(forecastDays.temperature.maximum));
-  let minTemperature = (Math.round(forecastDays.temperature.minimum));
-  let iconImage = (forecastDays.condition.icon); 
-  console.log(index);
-  forecastHTML = forecastHTML +
-  `<div class="col-2 forecastAlign" >
-            <div class="weeklyForecast">${formatDay(forecastDays.time)}</div>
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconImage}.png"
-              alt=""
-              class="temperatureImageSymbol"
-            />
-            <div class="highAndLow">
-              <span class="maxTemp"><b>
-              ${maxTemperature}°
-              </b> </span
-              ><span class="minTemp">
-             ${minTemperature}°
-              </span>
-              </div>
-          </div>`; }
-});
-  forecastHTML = forecastHTML + `</div>`;
-forecastElement.innerHTML = forecastHTML; 
- };
 
 
 let celsiusTemperature = null;
@@ -154,3 +162,5 @@ degreesCelsiusElement.addEventListener("click", displayCelsiusTemp);
 
 let degreesFahrenheitElement = document.querySelector(".degreesFahrenheit");
 degreesFahrenheitElement.addEventListener("click", displayFahrenheitTemp);
+
+search (`London`);
