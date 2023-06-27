@@ -94,7 +94,7 @@ p.exactTemp {
   margin: 0;
 }
 
-img {
+.mainEmojiSymbol {
   position: relative;
   bottom: 14px;
 }
@@ -141,44 +141,43 @@ ul {
   padding-left: 0px;
 }
 
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday {
+.weeklyForecast {
   font-family: "Manrope", sans-serif;
   font-size: 18px;
   text-align: center;
-
   margin-right: 0;
   padding: 0px;
 }
 
-.EmojiSymbolZero,
-.EmojiSymbolOne,
-.EmojiSymbolTwo,
-.EmojiSymbolThree,
-.EmojiSymbolFour {
-  font-family: "Manrope", sans-serif;
-  font-size: 30px;
+p.weeklyForecast,
+.minTemp {
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+
+div#forecast.col-2 {
   text-align: center;
-
-  margin-right: 0;
-  padding: 0px;
 }
-
-.monHighLow,
-.tuesHighLow,
-.wedHighLow,
-.thursHighLow,
-.friHighLow {
+.temperatureImageSymbol {
+  height: 50px;
+  text-align: center;
+}
+.forecastAlign {
+text-align: center;
+}
+.minTemp,
+.maxTemp {
   font-family: "Manrope", sans-serif;
   font-size: 14px;
   text-align: center;
-
   margin-right: 0px;
   margin-bottom: 20px;
   padding: 0px;
+}
+
+p.highAndLow {
+  text-align: center;
+  font-size: 16px;
 }
 
 .author {
